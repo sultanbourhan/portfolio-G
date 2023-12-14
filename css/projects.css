@@ -1,0 +1,240 @@
+.project{
+    height: calc(100vh - 70px);
+    position: relative;
+    overflow: hidden;
+}
+.project .light{
+    position: absolute;
+    mix-blend-mode: lighten;
+    bottom: 0;
+    transform: rotate(180deg);
+    right: 0;
+}
+
+.project .test{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 20px;
+
+}
+@media(max-width:1200px){
+    .project .test{
+        width: 90%;
+    }
+}
+.project .test .but{
+    display: flex;
+    gap: 20px;
+}
+
+.project .test .but button{
+    background: none;
+    border: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+.project .test .but .active,
+.project .test .but button:hover{
+    color: #e36244;
+}
+.project .test .but .active::before,
+.project .test .but button::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #e36244;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+.project .test .but .active::before,
+.project .test .but button:hover::before{
+    width: 100%;
+}
+
+.project ul{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px 15px;
+    background-color: #23232370;
+    border-radius: 15px;
+}
+@media(max-width:768px){
+    .project ul{
+        flex-direction: row;
+        width: 90%;
+        bottom: 0px;
+        top: auto;
+        justify-content: space-between;
+        
+    }
+}
+
+.project ul a{
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+}
+.project ul a:hover i{
+    color: #e36244;
+}
+
+
+.project .container{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+@media(max-width:1200px){
+    .project .container{
+        flex-direction: column;
+    }
+}
+.project .container .des{
+    width:40%;
+}
+@media(max-width:1200px){
+    .project .container .des{
+        width: 100%;
+    }
+}
+.project .container .des h1{
+    color: white;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+@media(max-width:768px){
+    .project .container .des h1 {
+        font-size: 30px;
+    }
+  }
+.project .container .des h1 > span{
+    color: #e36244;
+}
+.project .container .des p{
+    color: #c5c5c5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.project .container .test .item{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.project .container .test .item::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: #1b133590;*/
+    background-image: linear-gradient(to top ,#1b1335 ,#1b133550 );
+
+    height: 0;
+    transition: 0.3s;
+    z-index: 100;
+}
+.project .container .test .item:hover img{
+  transform: scale(1.1) ;
+  z-index: -10;
+}
+.project .container .test .item:hover::before{
+    height: 100%;
+}
+.project .container .test .item img{
+    width: 100%;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.project .container .test .item img:last-child{
+    width: 105%;
+}
+.project .container .test .item a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    z-index: 10000;
+    transition: 0.3s;
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.project .container .test .item a > p{
+    color: white;
+    font-size: 18px;
+    letter-spacing:3px;
+}
+.project .container .test .item a > i{
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.project .container .test .item a:hover i{
+    animation: move 1s infinite ease-in;
+    color: #e36244;
+}
+@keyframes move {
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(0);
+    }
+    40%,
+    60% {
+      transform: translateX(10px);
+    }
+  }
+
+.project .container .test .item:hover a{
+    opacity: 1;
+}
+.owl-nav{
+    display: none;
+}
+
+
+.owl-theme .owl-dots .owl-dot span{
+    background: #e3624450;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span{
+    background-color: #e36244;
+}
+
+.owl-theme .owl-dots{
+    margin-top: 10px;
+}
+
+
+/* .project .test .block{
+    display: block;
+} */
+.project .test .none{
+    display: none;
+}
